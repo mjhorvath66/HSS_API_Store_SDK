@@ -18,7 +18,7 @@
     <PackageReleaseNotes>Bug fix for cases where calls are made in rapid succession to each of the different APIs.  The client now is shared so the calls do not fail in that use case.</PackageReleaseNotes>
     <AssemblyVersion>1.0.2.0</AssemblyVersion>
     <FileVersion>1.0.2.0</FileVersion>
-    <Version>1.0.6</Version>
+    <Version>1.0.7</Version>
     <RepositoryUrl>https://github.com/mjhorvath66/HSS_API_Store_SDK</RepositoryUrl>
   </PropertyGroup>
 
