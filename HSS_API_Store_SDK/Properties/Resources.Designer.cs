@@ -59,27 +59,5 @@ namespace HSS_API_Store_SDK.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
-        ///&lt;doc&gt;
-        ///    &lt;assembly&gt;
-        ///        &lt;name&gt;HSS_API_Store_SDK&lt;/name&gt;
-        ///    &lt;/assembly&gt;
-        ///    &lt;members&gt;
-        ///        &lt;member name=&quot;T:HSS_API_Store_SDK.apiResponseFoods.ResponseEnumFoods&quot;&gt;
-        ///            &lt;summary&gt;
-        ///            This enum type defines the status results returned by GetFoodsAPI GET api/Foods call.
-        ///            &lt;/summary&gt;
-        ///        &lt;/member&gt;
-        ///        &lt;member name=&quot;F:HSS_API_Store_SDK.apiResponseFoods.ResponseEnumFoods.Success&quot;&gt;
-        ///            &lt;summary&gt;
-        ///            The get succeeded and the  [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string HSS_API_Store_SDK {
-            get {
-                return ResourceManager.GetString("HSS_API_Store_SDK", resourceCulture);
-            }
-        }
     }
 }

@@ -54,19 +54,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <FinalDocFile Remove="bin\Release\netstandard2.0\HSS_API_Store_SDK.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <FinalDocFile Remove="bin\Release\netstandard2.0\HSS_API_Store_SDK.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <FinalDocFile Remove="bin\Release\netstandard2.0\HSS_API_Store_SDK.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="bin\Release\netstandard2.0\HSS_API_Store_SDK.xml" />
+    <Folder Include="bin\Release\netstandard2.0\" />
   </ItemGroup>
 
 </Project>
