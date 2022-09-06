@@ -23,10 +23,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\HSS_WebsiteMigration\HorvathSoftwareSolutions\Content\HSSLogoSquare.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
     <None Include="..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -55,6 +51,13 @@
 
   <ItemGroup>
     <Folder Include="bin\Release\netstandard2.0\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="HSSLogoSquare.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
