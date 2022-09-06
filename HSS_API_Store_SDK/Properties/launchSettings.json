@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HSS_API_Store_SDK": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
