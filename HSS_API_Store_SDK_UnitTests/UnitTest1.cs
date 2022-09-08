@@ -16,7 +16,6 @@ namespace HSS_API_Store_SDK_UnitTests
         [TestMethod]
         public async Task TestMethodPasswords1()
         {
-            // Thread.Sleep(10000);
             for (int i = 0; i < 10; i++)
             {
                 var apiResponse = await Passwords.GetPasswordsAsync(ConfigurationManager.AppSettings.Get("HSS_API_Store_EmailAddress"),
@@ -64,8 +63,6 @@ namespace HSS_API_Store_SDK_UnitTests
         [TestMethod]
         public async Task TestMethodPasswords2()
         {
-            //Thread.Sleep(10000);
-
             var apiResponse = await Passwords.GetPasswordsAsync(ConfigurationManager.AppSettings.Get("HSS_API_Store_EmailAddress"), 
                 ConfigurationManager.AppSettings.Get("HSS_API_Store_PasswordsKey"), PasswordCharacterSelection: RequiredSymbols.Digits);
 
@@ -83,8 +80,6 @@ namespace HSS_API_Store_SDK_UnitTests
         [TestMethod]
         public async Task TestMethodFoods1()
         {
-            //Thread.Sleep(10000);
-
             var apiResponse = await Foods.GetFoodsAsync(ConfigurationManager.AppSettings.Get("HSS_API_Store_EmailAddress"), 
                 ConfigurationManager.AppSettings.Get("HSS_API_Store_FoodsKey"));
 
@@ -102,8 +97,6 @@ namespace HSS_API_Store_SDK_UnitTests
         [TestMethod]
         public async Task TestMethodFoods2()
         {
-            //Thread.Sleep(10000);
-
             var apiResponse = await Foods.GetFoodsAsync(ConfigurationManager.AppSettings.Get("HSS_API_Store_EmailAddress"),
                 ConfigurationManager.AppSettings.Get("HSS_API_Store_FoodsKey"), 20, "goat's milk");
 
@@ -123,8 +116,6 @@ namespace HSS_API_Store_SDK_UnitTests
         [TestMethod]
         public async Task TestMethodPeople1()
         {
-            //Thread.Sleep(10000);
-
             var apiResponse = await People.GetPeopleAsync(ConfigurationManager.AppSettings.Get("HSS_API_Store_EmailAddress"), 
                 ConfigurationManager.AppSettings.Get("HSS_API_Store_PeopleKey"), 5, StateSelection: StateIDEnum.AR);
 
