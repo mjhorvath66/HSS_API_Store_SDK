@@ -1,5 +1,5 @@
 # Introduction
-This project is intended to provide a nuget package for a SDK to aid Horvath Software Solutions API Store clients in development of their applications that consume the APIs we provide.
+This project is intended to provide a [nuget](https://www.nuget.org/packages?q=hss_api_store_sdk) package for a SDK to aid Horvath Software Solutions API Store clients in development of their applications that consume the APIs we provide.
 
 # Getting Started
 1.	Installation process is simple just install the package in your own projects package dependencies using nuget install.
