@@ -15,10 +15,10 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>This update allows build on github to function properly. No functional changes to the package itself.</PackageReleaseNotes>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
-    <Version>1.0.8</Version>
+    <PackageReleaseNotes>This release added Passphrase API support.</PackageReleaseNotes>
+    <AssemblyVersion>2.1.1.0</AssemblyVersion>
+    <FileVersion>2.1.1.0</FileVersion>
+    <Version>2.1.1</Version>
     <RepositoryUrl>https://github.com/mjhorvath66/HSS_API_Store_SDK</RepositoryUrl>
   </PropertyGroup>
 

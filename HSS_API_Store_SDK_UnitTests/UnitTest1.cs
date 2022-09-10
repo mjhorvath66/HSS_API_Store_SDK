@@ -7,6 +7,7 @@ using static HSS_API_Store_SDK.apiResponsePasswords;
 using static HSS_API_Store_SDK.apiResponseFoods;
 using static HSS_API_Store_SDK.apiResponsePeople;
 using System.Threading;
+using static HSS_API_Store_SDK.apiResponsePassphrase;
 
 namespace HSS_API_Store_SDK_UnitTests
 {
@@ -134,6 +135,19 @@ namespace HSS_API_Store_SDK_UnitTests
                 Console.WriteLine(person.PhoneNumber.FormatPhoneNumber());
                 Console.WriteLine(" ");
             }
+        }
+
+        [TestMethod]
+        public async Task TestMethodPassphrase1()
+        {
+            var apiResponse = await Passphrase.GetPassphraseAsync(ConfigurationManager.AppSettings.Get("HSS_API_Store_EmailAddress"),
+                ConfigurationManager.AppSettings.Get("HSS_API_Store_PassphraseKey"), 6, 4);
+
+            Assert.IsNotNull(apiResponse);
+            Assert.IsNotNull(apiResponse.passphraseValue);
+            Assert.AreEqual(ResponseEnumPassphrase.Success, apiResponse.responseStatus);
+
+            Console.WriteLine(apiResponse.passphraseValue);
         }
     }
 }
