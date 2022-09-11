@@ -149,5 +149,19 @@ namespace HSS_API_Store_SDK_UnitTests
 
             Console.WriteLine(apiResponse.passphraseValue);
         }
+
+        [TestMethod]
+        public void TestMethodPassphrase2()
+        {
+            var response = Passphrase.GetPassphraseAsync(ConfigurationManager.AppSettings.Get("HSS_API_Store_EmailAddress"),
+                ConfigurationManager.AppSettings.Get("HSS_API_Store_PassphraseKey"), 7, 4).GetAwaiter().GetResult();
+
+            if (response.responseStatus != apiResponsePassphrase.ResponseEnumPassphrase.Success)
+            {
+                Console.WriteLine(response.responseStatus.ToString());
+            }
+
+            Console.WriteLine("OK");
+        }
     }
 }
