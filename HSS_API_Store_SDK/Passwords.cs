@@ -20,11 +20,11 @@ namespace HSS_API_Store_SDK
             /// </summary>
             Success = 0,
             /// <summary>
-            /// The Count parameter is not in range of 1 to 50.
+            /// The Count parameter is not in range of 1 to 50 or WordCount is not in range of 3 to 10.
             /// </summary>
             InvalidCount = 1,
             /// <summary>
-            /// One or both of the minLength and maxLength parameters is out of range (1 to 512).
+            /// One or both of the minLength and maxLength parameters is out of range (1 to 512) or MinWordLength is not in range of 3 to 10.
             /// </summary>
             LengthOutOfRange = 2,
             /// <summary>
@@ -32,7 +32,7 @@ namespace HSS_API_Store_SDK
             /// </summary>
             AccessDenied = 3,
             /// <summary>
-            /// There was an unknown error making call to api.  We did not receive a response we expected.
+            /// There was an unknown error processing the api call.
             /// </summary>
             UnknownAPIError = 4
         }
@@ -101,7 +101,11 @@ namespace HSS_API_Store_SDK
             /// <summary>
             /// All four lower case [a-z], UPPER case [A-Z], digits [0-9] and symbols will be included in password. (Rules for excluded/allowed symbols apply here too.)
             /// </summary>
-            All = 15
+            All = 15,
+            /// <summary>
+            /// Generate random passphrases instead of passwords. Uses optional parameters WordCount (range 3 to 10) and MinWordLength (range 3 to 10).
+            /// </summary>
+            Passphrase = 16
         }
 
         /// <summary>
@@ -131,12 +135,14 @@ namespace HSS_API_Store_SDK
         /// <param name="ExcludedOrAllowed">This string of characters defines list of symbols and characters not to include in any password generated with symbols in it. Note that if the allowedInstead == true then only the symbols and characters listed are picked to include in the password.</param>
         /// <param name="allowedInstead">When this is false the ExcludedOrAllowed parameter lists excluded symbols and characters.  If it is true then only those listed will be picked for symbols when the password generator is adding a symbol to the password it is generating.</param>
         /// <param name="PasswordCharacterSelection">This enum parameter controls the types of characters and symbols picked by the password generator.  For example: Digits will pick only numeric digits [0-9]. For more details on this see our website [HSS_API_Store]https://horvathsoftware.com/HSS_API_Store.</param>
+        /// <param name="WordCount">Range 3 to 10 only used when PasswordCharacterSelection == Passphrase controls the number of words in the passphrase.</param>
+        /// <param name="MinWordLength">Range 3 to 10 only used when PasswordCharacterSelection == Passphrase controls the minimum length of the individual words the passphrase contains.</param>
         /// <returns>This API returns apiResponsePasswords which includes state information about the call and if successful a collection of passwords. See the apiResponsePasswords definition below.</returns>
-        public static async Task<apiResponsePasswords> GetPasswordsAsync(string EmailAddress, string APIKey, int Count = 1, int minLength = 9, int maxLength = 20, string ExcludedOrAllowed = "~!@#$%", bool allowedInstead = true, RequiredSymbols PasswordCharacterSelection = RequiredSymbols.All)
+        public static async Task<apiResponsePasswords> GetPasswordsAsync(string EmailAddress, string APIKey, int Count = 1, int minLength = 9, int maxLength = 20, string ExcludedOrAllowed = "~!@#$%", bool allowedInstead = true, RequiredSymbols PasswordCharacterSelection = RequiredSymbols.All, int WordCount=3, int MinWordLength=6)
         {
             try
             {
-                string path = "api/Passwords?EmailAddress=" + EmailAddress + "&APIKey=" + APIKey + "&Count=" + Count.ToString() + "&minLength=" + minLength.ToString() + "&maxLength=" + maxLength.ToString() + "&ExcludedOrAllowed=" + HttpUtility.UrlEncode(ExcludedOrAllowed) + "&allowedInstead=" + allowedInstead.ToString() + "&PasswordCharacterSelection=" + PasswordCharacterSelection.ToString();
+                string path = "api/Passwords?EmailAddress=" + EmailAddress + "&APIKey=" + APIKey + "&Count=" + Count.ToString() + "&minLength=" + minLength.ToString() + "&maxLength=" + maxLength.ToString() + "&ExcludedOrAllowed=" + HttpUtility.UrlEncode(ExcludedOrAllowed) + "&allowedInstead=" + allowedInstead.ToString() + "&PasswordCharacterSelection=" + PasswordCharacterSelection.ToString() + "&WordCount=" + WordCount.ToString() + "&MinWordLength=" + MinWordLength.ToString();
 
                 if (Client.client.BaseAddress == null)
                 {

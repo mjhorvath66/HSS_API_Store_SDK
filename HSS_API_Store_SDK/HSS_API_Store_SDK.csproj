@@ -15,10 +15,10 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>This release made the assembly strongly named. Updated to use .snk instead of .pfx for signing assembly.</PackageReleaseNotes>
-    <AssemblyVersion>2.1.1.2</AssemblyVersion>
-    <FileVersion>2.1.1.2</FileVersion>
-    <Version>2.1.3</Version>
+    <PackageReleaseNotes>This release made adds WordCount and MinWordLength parameters to the Passwords API.</PackageReleaseNotes>
+    <AssemblyVersion>3.1.1.1</AssemblyVersion>
+    <FileVersion>3.1.1.1</FileVersion>
+    <Version>3.1.1</Version>
     <RepositoryUrl>https://github.com/mjhorvath66/HSS_API_Store_SDK</RepositoryUrl>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>HSS_API_Store_SDK.Key.snk</AssemblyOriginatorKeyFile>
